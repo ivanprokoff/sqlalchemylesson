@@ -40,3 +40,4 @@ for i in range(4):
     db_sess = db_session.create_session()
     db_sess.add(user)
     db_sess.commit()
+create_job(1, 'deployment of residential modules 1 and 2', 15, '2, 3', 'now', False)
