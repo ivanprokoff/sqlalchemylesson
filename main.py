@@ -1,5 +1,21 @@
 from data import db_session
 from data.users import User
+from data.jobs import Jobs
+
+
+def create_job(team_leader_, job_, work_size_, collaborators_, start_date_, is_finished_):
+    job = Jobs()
+    job.team_leader = team_leader_
+    job.job = job_
+    job.work_size = work_size_
+    job.collaborators = collaborators_
+    job.start_date = start_date_
+    job.is_finished = is_finished_
+    db_sess_ = db_session.create_session()
+    db_sess_.add(job)
+    db_sess_.commit()
+
+
 
 db_session.global_init("db/colonisation.db")
 
